@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baker Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+            
+        }
+        .Baker {
+            width: 400px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin-top: 100px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgb(255, 0, 128);
+        }
+        .Baker h2 {
+            color: rgb(128, 0, 64);
+            text-align: center;
+        }
+        .Baker input[type=email],
+        .Baker input[type=password] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid rgb(255, 0, 128);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+        .Baker label {
+            font-family: 'Lobster', cursive;
+            font-size: medium;
+            color: rgb(128, 0, 64);
+        }
+        .Baker input[type=submit] {
+            width: 50%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(128, 0, 64);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .Baker input[type=submit]:hover {
+            background-color: #8d2a4c;
+        }
+        .Baker .forgot-password {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .Baker .forgot-password a {
+            color: rgb(128, 0, 64);
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+        }
+        .Baker .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<header>
+    <span class="icon">
+      <img src="cake-slice.png" height="50px" width="50px">
+      <h2>Welcome to BakeBuddy!!</h2>
+    </span>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header> 
+  
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div class="Baker">
+            <h2>Baker Login</h2>
+            <form action="BakerLoginController" method="POST">
+                <label for="mail">Email address</label><br>
+                <input id="mail" type="email" name="email" placeholder="Enter your email address" required><br><br>
+                
+                <label for="mailpass">Password</label><br>
+                <input id="mailpass" type="password" name="pass" placeholder="Enter your password" required><br><br>
+                
+                <input  onclick="goToLogin3()" type="submit" value="Login">
+            </form>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+        </div>
+    
+    <script>
+        // Load the header component
+        document.getElementById("header").innerHTML = fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+        
+        function goToLogin3(){
+       	 window.location.href ="DashBoard.html";
+       }
+    </script>
+</body>
+</html>

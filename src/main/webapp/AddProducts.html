@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body 
+        {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+         .container 
+         {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .Baker 
+        {
+            width: 600px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin-top: 70px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgb(255, 0, 128);
+        }
+        .Baker h2 
+        {
+            color: rgb(128, 0, 64);
+        }
+        .Baker input[type=text],
+        .Baker input[type=number],
+        .Baker input[type=file],
+        .Baker textarea,
+        .Baker select 
+        {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid rgb(255, 0, 128);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+        .Baker label 
+        {
+            font-family: 'Lobster', cursive;
+            font-size: medium;
+            color: rgb(128, 0, 64);
+        }
+        .Baker input[type=submit] 
+        {
+            width: 50%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(128, 0, 64);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .Baker input[type=submit]:hover 
+        {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div class="Baker">
+            <h2>Add Product </h2>
+            <form action="AddProductsController" method="post" enctype="multipart/form-data">
+            
+                <input id="pname" name="pname" type="text" placeholder="Enter title of product"><br><br>
+
+                
+                <textarea id="productdetail" name="productdetail" height=30px width="100px" placeholder="Enter product description"></textarea>
+
+                <input id="price" name="price" type="number" placeholder="Enter price of product"><br><br>
+    
+
+                <input id="quantity" name="quantity" type="number" placeholder="Enter product Quantity"><br><br>
+                
+                <label for="file-upload">Select Product image:</label>
+                <input type="file" id="file-upload" name="fileUpload">
+                <br><br>
+                
+                <input type="submit"  value="Add Product">
+            </form>
+        </div>
+    </div>
+    <script>
+        // Load the header component
+        document.getElementById("header").innerHTML = fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

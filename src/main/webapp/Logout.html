@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   .logout-message{
+   position:relative;
+   top:200px;
+   margin-bottom:200px;
+   align-self:center;
+  
+   }
+   
+  
+</style>
+<body>
+    <header>
+        <span class="icon">
+          <img src="product-images/cake-slice.png" height="50px" width="50px">
+          <h2>Goodbye from BakeBuddy!</h2>
+        </span>
+    </header>
+  
+        <div class="logout-message">
+            <h1>You have successfully logged out.</h1>
+            <p>Thank you for visiting BakeBuddy. We hope to see you again soon!</p>
+            <button onclick="goToHome()">Return to Home</button>
+        </div>
+   
+    
+    <script>
+        function goToHome() 
+        {
+            window.location.href = "DashBoard.html";  // Redirect to home page
+        }
+    </script>
+</body>
+</html>

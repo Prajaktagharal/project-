@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* General styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da; /* Light pink background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for the form */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 2px solid #c7234d; /* Dark pink border color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Heading styles */
+        h2 {
+            color: #c7234d; /* Dark pink color for the heading */
+            font-family: 'Lobster', cursive;
+            margin-bottom: 20px;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Label styles */
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Input styles */
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        /* Submit button styles */
+        input[type="submit"] {
+            background-color: #d9534f;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+
+<header>
+    <span class="icon">
+      <img src="cake-slice.png" height="50px" width="50px">
+      <h2>Welcome to BakeBuddy!!</h2>
+    </span>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header> 
+
+
+<body>
+    <div class="container">
+        <h2>Cancel Registration</h2>
+        <form action="CancelBakerRegistrationController" method="post">
+            <label for="userid">Enter your User ID or Email:</label>
+            <input type="text" id="userid" name="email" required>
+            <input type="submit" value="Cancel Registration">
+        </form>
+    </div>
+</body>
+</html>

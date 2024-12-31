@@ -1,0 +1,227 @@
+@charset "ISO-8859-1";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height:max-content; /* Full height to allow centering */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    position: sticky; /* Sticks the header to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #dd5c85; /* Background color for the header */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Optional padding for content inside the header */
+    z-index: 1000; /* Ensures the header is above other content */
+    
+}
+
+main {
+    flex: 1; /* Fills the remaining space after header */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the content vertically */
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: rgb(223, 168, 185);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 1em;
+    color: #333;
+}
+
+.card button {
+    background-color: #9e1341;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.card button:hover {
+    background-color: #bf5378;
+}
+
+.icon {
+    display: flex;
+}
+
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.head-content {
+    display: flex;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* Tomato color */
+}
+
+.cta .btn {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: #e5533b;
+}
+
+#button1 {
+    display: inline;
+    height: max-content;
+    font-family: cursive;
+    font-style: italic;
+    background-color: rgb(171, 44, 73);
+    border: solid 2px rgb(171, 44, 73);
+    border-radius: 20px;
+    size: 10px;
+}
+
+.nav-links #button1:hover {
+    background-color: white;
+    color: rgb(171, 44, 73);
+}
+
+#button2 {
+    display: inline;
+    height: max-content;
+    font-family: cursive;
+    font-style: italic;
+    background-color: rgb(171, 44, 73);
+    border: solid 2px rgb(171, 44, 73);
+    border-radius: 20px;
+}
+
+.nav-links #button2:hover {
+    background-color: white;
+    color: rgb(171, 44, 73);
+}
+
+/* Adding Logout button styling similar to Register and Login buttons */
+#button3 {
+    display: inline;
+    height: max-content;
+    font-family: cursive;
+    font-style: italic;
+    background-color: rgb(171, 44, 73);
+    border: solid 2px rgb(171, 44, 73);
+    border-radius: 20px;
+}
+
+.nav-links #button3:hover {
+    background-color: white;
+    color: rgb(171, 44, 73);
+}
+
+/* Logout message styling for centering */
+.logout-message {
+    background-color: white;
+    border: 2px solid #dd5c85;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:400px;
+    margin-left:800px;
+}
+
+.logout-message h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logout-message p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.logout-message button {
+    background-color: #dd5c85;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-message button:hover {
+    background-color: #c34b70;
+}

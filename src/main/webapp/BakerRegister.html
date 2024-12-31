@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Baker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            overflow: auto;
+            
+            
+        }
+        .Baker {
+            height:1500px;
+            width: 600px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            margin-top: 70px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgb(255, 0, 128);
+        }
+        .Baker h2 {
+            color: rgb(128, 0, 64);
+        }
+        .Baker input[type=text],
+        .Baker input[type=email],
+        .Baker input[type=link],
+        .Baker input[type=password],
+        .Baker textarea,
+        .Baker select 
+        {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid rgb(255, 0, 128);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+        .Baker label 
+        {
+            font-family: 'Lobster', cursive;
+            font-size: medium;
+            color: rgb(128, 0, 64);
+        }
+        .Baker input[type=submit] 
+        {
+            width: 50%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(128, 0, 64);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .Baker input[type=submit]:hover 
+        {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+
+<header>
+    <span class="icon">
+      <img src="cake-slice.png" height="50px" width="50px">
+      <h2>Welcome to BakeBuddy!!</h2>
+    </span>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <a href="BakerLogin.html"><li><button id="button2">LOGIN</button></li></a> 
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div class="Baker">
+            <h2>Register as Baker</h2>
+            <form action="BakerRegisterController">
+                <label for="bname">Bakery name</label><br>
+                <input id="bname" type="text" name="bakeryname" placeholder="Enter bakery name" required ><br><br>
+
+                <label for="bname">Baker's name</label><br>
+                <input id="bakername" type="text" name="bakername" placeholder="Enter baker's name" required ><br><br>
+
+                <label for="stage">Would you like to register as</label><br>
+                <input id="stage" type="text" name="nickname" placeholder="Enter name you want to display" required><br><br>
+
+                <label for="num">Contact number</label><br>
+                <input id="num" type="text" name="mob" placeholder="Enter your number" required><br><br>
+
+                <label for="mail">Email address</label><br>
+                <input id="mail" type="email" name="email" placeholder="Enter your email address" required><br><br>
+                
+                <label for="mailpass">Password</label><br>
+                <input id="mailpass" name="pass" type="password" placeholder="Set your password" required><br><br>
+
+                <label for="social">Social media Link</label><br>
+                <input id="social" type="text" name="link" placeholder="Enter your Instagram/Facebook page link" required><br><br>
+
+                <label for="brief">Write a brief about you</label><br>
+                <textarea id="brief" name="about" required></textarea><br><br>
+
+                <h2>Bakery Address</h2>
+
+                <label for="address">Address</label><br>
+                <input id="address" type="text" name="address" placeholder="Enter your address [Area-city-state]" required ><br><br>
+
+                <label for="country">Country</label><br>
+                <select id="country" name="country" onchange="updateStates()">
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="india">India</option>
+                    <option value="australia">Australia</option>
+                </select><br><br>
+
+                <label for="state">State</label><br>
+                <select id="state" name="state"></select><br><br>
+
+                <label for="delivery">Delivery arrangement</label><br>
+                <select id="delivery" name="deliveryManagement">
+                    <option value="pickup">PickUp</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="both">Delivery & PickUp</option>
+                </select><br><br>
+
+                <label for="diet">Diet filter</label><br>
+                <select id="diet" name="dietFilter">
+                    <option value="none">None</option>
+                    <option value="eggless">Egg-less</option>
+                    <option value="egg">Egg</option>
+                    <option value="bothdiet">Both</option>
+                </select><br><br>
+                
+                <input type="submit" value="Register"></input>
+            </form>
+        </div>
+    </div>
+    <script>
+        const statesByCountry = 
+        {
+            usa: ['California', 'New York', 'Texas', 'Florida'],
+            canada: ['Ontario', 'Quebec', 'British Columbia', 'Alberta'],
+            india: ['Maharashtra', 'Karnataka', 'Tamil Nadu', 'Delhi'],
+            australia: ['New South Wales', 'Victoria', 'Queensland', 'Western Australia']
+        };
+
+        function updateStates() 
+        {
+            const countrySelect = document.getElementById('country');
+            const stateSelect = document.getElementById('state');
+            const selectedCountry = countrySelect.value;
+            
+            stateSelect.innerHTML = '';
+            const states = statesByCountry[selectedCountry];
+
+            states.forEach(function(state) {
+                const option = document.createElement('option');
+                option.value = state.toLowerCase().replace(/\s+/g, '');
+                option.textContent = state;
+                stateSelect.appendChild(option);
+            });
+        }
+
+        // Call updateStates when the page loads to ensure the state dropdown is populated
+        window.onload = function() {
+            updateStates();
+        };
+    </script>
+</body>
+</html>

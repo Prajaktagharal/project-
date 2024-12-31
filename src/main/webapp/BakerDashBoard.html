@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .menu {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgb(255, 0, 128);
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .menu h2 {
+            text-align: center;
+            color: rgb(128, 0, 64);
+            font-family: 'Lobster', cursive;
+            margin-bottom: 30px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu ul li {
+            background-color: #dd5c85;
+            color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(109, 37, 72, 0.2);
+        }
+
+        .menu ul li:hover {
+            background-color: rgb(150, 26, 66);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li button {
+            background-color: #dd5c85;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(109, 37, 72, 0.2);
+        }
+
+        nav ul li button:hover {
+            background-color: rgb(150, 26, 66);
+        }
+
+        /* Apply the Logout button styling here */
+        #button3 {
+            display: inline;
+            height: max-content;
+            font-family: cursive;
+            font-style: italic;
+            background-color: rgb(171, 44, 73);
+            border: solid 2px rgb(171, 44, 73);
+            border-radius: 20px;
+        }
+
+        .nav-links #button3:hover {
+            background-color: white;
+            color: rgb(171, 44, 73);
+        }
+
+    </style>
+</head>
+
+<header>
+    <span class="icon">
+      <img src="cake-slice.png" height="50px" width="50px">
+      <h2>Welcome to BakeBuddy!!</h2>
+    </span>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- Styled Logout button -->
+            <li><button id="button3" onclick="window.location.href='Logout.html'">LOGOUT</button></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div id="header"></div>
+    <div class="dashboard-container">
+        <div class="menu">
+            <h2>Baker Dashboard</h2>
+            <ul>
+                <li onclick="window.location.href='AddProducts.html'">Add Products</li>
+                <li onclick="window.location.href='#earnings'">Earnings</li>
+                <li onclick="window.location.href='#delivered'">Delivered</li>
+                <li onclick="window.location.href='#pendings'">Pendings</li>
+                <li onclick="window.location.href='#my-products'">My Products</li>
+                <li onclick="window.location.href='CancelBakerRegistration.html'">Cancel Registration</li>              
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Load the header component
+        document.getElementById("header").innerHTML = fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
